@@ -14,6 +14,7 @@ require("lazy").setup({
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
     -- { import = "lazyvim.plugins.extras.lang.json" },
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
+    { import = "lazyvim.plugins.extras.dap.core" },
     -- import/override with your plugins
     { import = "plugins" },
   },
@@ -43,4 +44,15 @@ require("lazy").setup({
       },
     },
   },
+})
+
+require("which-key").setup({
+  defaults = {
+    ["<leader>d"] = { name = "+debug" },
+    ["<leader>da"] = { name = "+adapters" },
+  },
+})
+
+require("mason-nvim-dap").setup({
+  automatic_installation = true,
 })
